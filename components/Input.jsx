@@ -8,11 +8,14 @@ export default function Input(props) {
 				rounded-[8px] 
 				border-[2px] 
 				border-slate-300 
-				w-full
 			" 
-			placeholder="New todo..."
+			placeholder={props.placeholder}
 			value={props.value} 
 			onChange={props.onChange} 
+			checked={props.checked}
+			required={props.required}
+			minLength={props.minLength}
+			maxLength={props.maxLength}
 		/>
 	)
 }

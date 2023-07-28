@@ -1,4 +1,7 @@
+import Input from './Input'
+
 export default function TodoItem(props) {
+	console.log(props.data)
 	return (
 		<div className="
 			flex 
@@ -9,10 +12,10 @@ export default function TodoItem(props) {
 			border-slate-300 
 			last:border-b-0
 		">
-			<input 
+			<Input 
 				type="checkbox" 
 				checked={props.data.end} 
-				onChange={(e) => props.handleFinishTodo(e, props.data.id)}
+				onChange={(e) => props.handleFinishTodo(e, props.data)}
 			/>
 
 			{props.data.end ? 
@@ -26,7 +29,7 @@ export default function TodoItem(props) {
 					ml-auto 
 					cursor-pointer
 				" 
-				onClick={() => props.handleDeleteTodo(props.data.id)}
+				onClick={() => props.handleDeleteTodo(props.data)}
 			>
 				Delete
 			</span>
