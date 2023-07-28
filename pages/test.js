@@ -32,8 +32,8 @@ export default function Test() {
 
   return(
     <ul>
-      {concatData.filter(row => !row.active).map(row =>
-        <li>{row.id + 1}. {row.name} | {row.phone}</li>
+      {concatData.filter(row => !row.active).map((row, index) =>
+        <li key={index}>{row.id + 1}. {row.name} | {row.phone}</li>
       )}
     </ul>
   )
